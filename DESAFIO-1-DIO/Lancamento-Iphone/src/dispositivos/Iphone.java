@@ -16,20 +16,20 @@ public class Iphone implements AparelhoTelefonico, NavegadorWeb, ReprodutorMulti
         
         do {
             System.out.println("\nDigite qual aplicativo deseja abrir: ");
-            System.out.println("IPODE");
-            System.out.println("TELEFONE");
-            System.out.println("WEB");
-            System.out.println("0 PARA SAIR");
+            System.out.println("1 - IPODE");
+            System.out.println("2 - TELEFONE");
+            System.out.println("3 - WEB");
+            System.out.println("0 - PARA SAIR");
             comando = ler.next();
             comando = comando.toLowerCase();
         
-            if(comando.equals("ipode")){
+            if(comando.equals("1")){
                 musicPlayer(phone, comando, ler);
                 
-            }else if(comando.equals("telefone")){
+            }else if(comando.equals("2")){
                 smartphone(phone, comando, ler);
 
-            }else if(comando.equals("web")){
+            }else if(comando.equals("3")){
                NavegadorWeb(phone, comando, ler);
 
             }else{
@@ -47,28 +47,28 @@ public class Iphone implements AparelhoTelefonico, NavegadorWeb, ReprodutorMulti
             System.out.println("");
             System.out.println("Ipode aberto");
             System.out.println("Digite sua proxima opção: - listar, selecionar, tocar, pausa: ");
-            System.out.println("LISTAR");
-            System.out.println("SELECIONAR");
-            System.out.println("TOCAR");
-            System.out.println("PAUSAR");
-            System.out.println("MENU");
+            System.out.println("1 - LISTAR");
+            System.out.println("2 - SELECIONAR");
+            System.out.println("3 - TOCAR");
+            System.out.println("4 - PAUSAR");
+            System.out.println("0 - MENU");
             comando = ler.next();
             comando = comando.toLowerCase();
 
             switch (comando) {
-                case "listar":
+                case "1":
                     System.out.println("");
                     phone.listarMusicas();
                     break;
-                case "selecionar":
+                case "2":
                     System.out.println("");
                     phone.selecionarMusica();
                     break;
-                case "tocar":
+                case "3":
                     System.out.println("");
                     phone.tocarMusica();
                 break;
-                case "pausar":
+                case "4":
                     System.out.println("");
                     phone.pausarMusica();
                     break;
@@ -86,27 +86,27 @@ public class Iphone implements AparelhoTelefonico, NavegadorWeb, ReprodutorMulti
 
             System.out.println("\nTELEFONE ABERTO");
             System.out.println("Digite sua proxima opção: ");
-            System.out.println("LIGAR");
-            System.out.println("ATENDER");
-            System.out.println("CORREIO");
-            System.out.println("INICIAR CONFERENCIA");
-            System.out.println("MENU");
+            System.out.println("1 - LIGAR");
+            System.out.println("2 - ATENDER");
+            System.out.println("3 - CORREIO");
+            System.out.println("4 - INICIAR CONFERENCIA");
+            System.out.println("0 - MENU");
             comando = ler.next();
             comando = comando.toLowerCase();
             switch (comando) {
-                case "ligar":
+                case "1":
                     System.out.println("");
                     phone.ligar();
                     break;
-                case "atender":
+                case "2":
                     System.out.println("");
                     phone.atender();
                     break;
-                case "correio":
+                case "3":
                     System.out.println("");
                     phone.iniciarCorreioVoz();
                     break;
-                case "conferencia":
+                case "4":
                     System.out.println("");
                     phone.conferencia();
                     break;
@@ -124,22 +124,22 @@ public class Iphone implements AparelhoTelefonico, NavegadorWeb, ReprodutorMulti
             
             System.out.println("\nWEB ABERTA");
             System.out.println("Digite sua proxima opção: ");
-            System.out.println("ABRIR PAGINA");
-            System.out.println("NOVAABA");
-            System.out.println("ATUALIZAR");
-            System.out.println("MENU");
+            System.out.println("1 - ABRIR PAGINA");
+            System.out.println("2 - NOVAABA");
+            System.out.println("3 - ATUALIZAR");
+            System.out.println("0 - MENU");
             comando = ler.next();
             comando = comando.toLowerCase();
             switch (comando) {
-                case "abrir":
+                case "1":
                     System.out.println("");
                     phone.exibirPagina();
                     break;
-                case "novaaba":
+                case "2":
                     System.out.println("");
                     phone.adicionarNovaAba();
                     break;
-                case "atualizar":
+                case "3":
                     System.out.println("");
                     phone.atualizarPagina();
                     break;
