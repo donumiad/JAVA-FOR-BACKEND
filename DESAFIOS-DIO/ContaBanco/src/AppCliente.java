@@ -64,17 +64,22 @@ public class AppCliente {
             if(acaoDesejada == 1){   //SACAR
                 if(tipoDeConta == 1){  //POUPANCA
                     poupanca.sacar();
-                }else{
+                }else{                  //CORRENTE
                     corrente.sacar();
                 }
-            }else if(acaoDesejada == 2){
+            }else if(acaoDesejada == 2){ //DEPOSITAR
                 if(tipoDeConta == 1){  //POUPANCA
                     poupanca.depositar();
-                }else{
+                }else{                  //CORRENTE
                     corrente.depositar();
                 }
                 
-            }else if(acaoDesejada == 3){
+            }else if(acaoDesejada == 3){  //TRANSFERIR
+                if(tipoDeConta == 1){  //POUPANCA
+                    poupanca.transferir();
+                }else{                  //CORRENTE
+                    corrente.depositar();
+                }
 
             }else if(acaoDesejada == 4){
 

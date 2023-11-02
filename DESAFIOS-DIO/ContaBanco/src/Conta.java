@@ -10,7 +10,8 @@ public abstract class Conta implements Iconta{
     protected int numeroDaConta;
     protected double saldo;
     protected Cliente clienteConta;
-    
+    private double valorManipulado = 0;
+    private boolean temSaldo = false;
 
     
     
@@ -22,28 +23,28 @@ public abstract class Conta implements Iconta{
 
     @Override
     public void sacar() {
-        double valor = 0;
-        if(this.saldo > 0){
-            System.out.printf("Seu saldo é:", this.saldo);
-            System.out.println("Digite o valor a ser sacado: ");
-            valor = dadoScanner.nextDouble();
-            this.saldo -= valor;
+        verificaSaldo();
+        if(temSaldo){
+            this.saldo -= valorManipulado;
         }else{
             System.out.println("SALDO INSUFICIENTE");
         }
-        
      }
     @Override
     public void depositar() {
-        double valor = 0;
+        
         System.out.println("Digite o valor a depositar: ");
-        valor = dadoScanner.nextDouble();
-        this.saldo += valor;
+        valorManipulado = dadoScanner.nextDouble();
+        this.saldo += valorManipulado;
       }
     @Override
-    public void transferir(double valor, Conta contaDestino) {
-        //this.sacar(Scanner dadoScanner);
-        contaDestino.depositar();
+    public void transferir() {
+        verificaSaldo();
+        if(temSaldo){
+            this.saldo -= valorManipulado;
+            System.out.println("CONTA DESTINO");
+            
+        }
      }
 
     public int getAgencia() {
@@ -62,8 +63,24 @@ public abstract class Conta implements Iconta{
         System.out.println(String.format("Saldo: %.2f", this.saldo));
         
     }
-    protected void analiseDeCredito(){
-
+    protected void verificaSaldo(){
+        if (this.saldo > 0) {
+            System.out.printf("Seu saldo é:", this.saldo);
+            System.out.println("Digite o valor: ");
+            valorManipulado = dadoScanner.nextDouble();
+            if(valorManipulado <= this.saldo){
+                temSaldo = true;
+                return;
+            }else{
+                temSaldo = false;
+                System.out.println("SALDO INSUFICIENTE");
+                return;
+            }
+        }else{
+            temSaldo = false;
+            System.out.println("SALDO INSUFICIENTE");
+            return;
+        }
     }
   
 }
