@@ -1,12 +1,12 @@
-public class NoDaFila {
+public class NoDaFila<T> {
     
-    private Object object;
-    private NoDaFila refProximoNoDaFila;
+    private T object;
+    private NoDaFila<T> refProximoNoDaFila;
 
     public NoDaFila(){
     }
 
-    public NoDaFila(Object object) {
+    public NoDaFila(T object) {
         this.refProximoNoDaFila = null;
         this.object = object;
     }
@@ -16,15 +16,15 @@ public class NoDaFila {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 
-    public NoDaFila getRefProximoNoDaFila() {
+    public NoDaFila<T> getRefProximoNoDaFila() {
         return refProximoNoDaFila;
     }
 
-    public void setRefProximoNoDaFila(NoDaFila refProximoNoDaFila) {
+    public void setRefProximoNoDaFila(NoDaFila<T> refProximoNoDaFila) {
         this.refProximoNoDaFila = refProximoNoDaFila;
     }
 

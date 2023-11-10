@@ -1,17 +1,18 @@
-public class Fila {
+public class Fila<T> {
     
-    private NoDaFila refNoDeEntrada;
+    private NoDaFila<T> refNoDeEntrada;
 
     public Fila(){
         this.refNoDeEntrada = null;
     }
 
-    public void enqueue(NoDaFila novoNo){
+    public void enqueue(T obj){
+        NoDaFila novoNo = new NoDaFila(obj);
         novoNo.setRefProximoNoDaFila(refNoDeEntrada);
         refNoDeEntrada = novoNo;
     }
 
-    public NoDaFila first(){
+    public T first(){
         if (!this.isEmpty()) {
             NoDaFila primeiroNoDaFila = refNoDeEntrada;
             while (true) {
@@ -21,12 +22,12 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNoDaFila;
+            return (T) primeiroNoDaFila.getObject();
         }
         return null;
     }
 
-    public NoDaFila dequeue(){
+    public T dequeue(){
         if (!this.isEmpty()) {
             NoDaFila primeiroNoDaFila = refNoDeEntrada;
             NoDaFila noAuxiliarDaFila = refNoDeEntrada;
@@ -39,7 +40,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNoDaFila;
+            return (T) primeiroNoDaFila.getObject();
         }
         return null;
     }

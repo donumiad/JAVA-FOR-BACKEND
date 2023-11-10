@@ -1,11 +1,11 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Fila minhaFila =  new Fila();
+        Fila<String> minhaFila =  new Fila<>();
 
-        minhaFila.enqueue(new NoDaFila("primeiro"));
-        minhaFila.enqueue(new NoDaFila("segundo"));
-        minhaFila.enqueue(new NoDaFila("terceiro"));
-        minhaFila.enqueue(new NoDaFila("quarto"));
+        minhaFila.enqueue("primeiro");
+        minhaFila.enqueue("segundo");
+        minhaFila.enqueue("terceiro");
+        minhaFila.enqueue("quarto");
 
         System.out.println(minhaFila);
 
