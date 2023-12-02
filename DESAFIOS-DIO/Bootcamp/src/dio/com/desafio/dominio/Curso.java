@@ -21,7 +21,7 @@ public class Curso extends Conteudo {
     }
     @Override
     public String toString() {
-        return "Monitoria [Titulo: " + getTitulo() + 
+        return "Curso [Titulo: " + getTitulo() + 
                           ", Carga horaria: "+ cargaHoraria +
                           ", Descricao: "+ getDescricao() +" ]";
     }
